@@ -51,7 +51,7 @@ namespace Brighteye
             WorkWithContext.GenerationRandomNumbers();
             numberListBox1.ItemsSource = WorkWithContext.ViewRandomNumbers();
             SetDataContext();
-            MessageBox.Show("Дані успішно згенеровані!!!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Data has been successfully generated!!!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void SortButton_Click(object sender, RoutedEventArgs e)
@@ -59,7 +59,7 @@ namespace Brighteye
             Window1 window = new Window1();
             window.Show();
             Hide();
-            MessageBox.Show("Дані успішно відсортовані!!!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Data has been successfully sorted!!!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void SetDataContext()
