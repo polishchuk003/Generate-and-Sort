@@ -5,7 +5,7 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Brighteye.DataModel.TestDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Brighteye.TestDBContext>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@
             ContextKey = "Brighteye.DataModel.TestDBContext";
         }
 
-        protected override void Seed(Brighteye.DataModel.TestDBContext context)
+        protected override void Seed(Brighteye.TestDBContext context)
         {
             //  This method will be called after migrating to the latest version.
 

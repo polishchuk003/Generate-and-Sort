@@ -1,9 +1,6 @@
-using Brighteye.Data;
-using System;
 using System.Data.Entity;
-using System.Linq;
 
-namespace Brighteye.DataModel
+namespace Brighteye
 {
     public class TestDBContext : DbContext
     {

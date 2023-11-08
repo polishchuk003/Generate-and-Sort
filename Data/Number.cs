@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Brighteye.Data
+namespace Brighteye
 {
     public class Number
     {

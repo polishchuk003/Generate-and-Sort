@@ -1,13 +1,7 @@
-﻿using Brighteye.Data;
-using Brighteye.DataModel;
-using Brighteye.Services;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Brighteye.MainOperations
+namespace Brighteye
 {
     internal class WorkWithContext
     {

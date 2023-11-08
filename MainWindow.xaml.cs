@@ -1,33 +1,10 @@
-﻿using Brighteye.Data;
-using Brighteye.DataModel;
-using Brighteye.MainOperations;
-using Brighteye.Services;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Xml;
-using static System.Net.Mime.MediaTypeNames;
+﻿using System.Windows;
 
 namespace Brighteye
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        private Window1 _window = new Window1();
         public MainWindow()
         {
             InitializeComponent();
@@ -56,10 +33,10 @@ namespace Brighteye
 
         private void SortButton_Click(object sender, RoutedEventArgs e)
         {
-            Window1 window = new Window1();
-            window.Show();
+            _window.Show();
             Hide();
             MessageBox.Show("Data has been successfully sorted!!!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+
         }
 
         private void SetDataContext()
