@@ -70,7 +70,7 @@
     <Compile Include="DataModel\NumbersViewModel.cs" />
     <Compile Include="DataModel\TestDBContext.cs" />
     <Compile Include="ennee\OperationsWithTables.cs" />
-    <Compile Include="ennee\WWOO.cs" />
+    <Compile Include="ennee\WorkWithContext.cs" />
     <Compile Include="Migrations\202311061433443_InitialCreate.cs" />
     <Compile Include="Migrations\202311061433443_InitialCreate.designer.cs">
       <DependentUpon>202311061433443_InitialCreate.cs</DependentUpon>

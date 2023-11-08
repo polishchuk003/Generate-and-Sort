@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Brighteye.ennee
 {
-    public class WWOO
+    public class WorkWithContext
     {
         public TestDBContext context = new TestDBContext();
         public OperationsWithTables operationsWithTables = new OperationsWithTables();

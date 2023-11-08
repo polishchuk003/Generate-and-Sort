@@ -27,7 +27,7 @@ namespace Brighteye
     /// </summary>
     public partial class MainWindow : Window
     {
-        public WWOO www = new WWOO();
+        public WorkWithContext www = new WorkWithContext();
         public MainWindow()
         {
             InitializeComponent();

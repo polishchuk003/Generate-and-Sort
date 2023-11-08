@@ -12,9 +12,9 @@
                 <DataGridTextColumn Header="SortedNumber" FontSize="18" Binding="{Binding Value}" Width="150"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Background="Yellow" Grid.Row="1" Content="OK" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" Margin="20" Click="Button_Click"/>
+        <Button Background="White" Grid.Row="1" Content="OK" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" Margin="20" Click="Button_Click"/>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="100*"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
     </Grid>
