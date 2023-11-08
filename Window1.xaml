@@ -9,7 +9,7 @@
     <Grid Background="SlateGray" Margin="10" > 
         <DataGrid Padding="5" Margin="5" Grid.Row="0" AutoGenerateColumns="False" ItemsSource="{Binding Items}">
             <DataGrid.Columns >
-                <DataGridTextColumn Header="SortedNumber" FontSize="20" Binding="{Binding Value}" Width="150"/>
+                <DataGridTextColumn Header="SortedNumber" FontSize="18" Binding="{Binding Value}" Width="150"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Background="Yellow" Grid.Row="1" Content="OK" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" Margin="20" Click="Button_Click"/>
