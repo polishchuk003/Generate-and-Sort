@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Brighteye"
         mc:Ignorable="d"
-        Title="Application for sorting numbers" Height="600" Width="500" MinHeight="300" MinWidth="200">
+        Title="Application for sorting numbers" Height="600" Width="600" MinHeight="500" MinWidth="500" WindowStartupLocation="CenterScreen">
     <Grid Background="LightGray" Margin="5">
         <Button Background="White" Content="Generate" HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Height="30" Margin="20" Click="PopulateButton_Click"/>
         <Button Background="White" Content="Sort" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Height="30" Margin="20" Click="SortButton_Click"/>
         <Label Content="RandomNumbers" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="1" FontSize="20"/>
         <Image Source="logo/logo.jpg" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="120"/>
-        <Label Content="Desigh by Polishchuk S" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1" FontSize="10"/>
+        <Label Name="label" Content="Desigh by Polishchuk S" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1" FontSize="10"/>
         <ListBox Name="numberListBox1" Grid.Row="1" FontSize="20" Margin="10" Padding="10">
         </ListBox>
         <Grid.RowDefinitions>

@@ -31,6 +31,7 @@ namespace Brighteye
         public MainWindow()
         {
             InitializeComponent();
+            
             Loaded += MainWindow_Loaded;
             Closed += MainWindow_Closed;
         }
@@ -47,6 +48,7 @@ namespace Brighteye
 
         private void PopulateButton_Click(object sender, RoutedEventArgs e)
         {
+            label.Visibility = Visibility.Collapsed;
             www.GenerationRandomNumbers();
             numberListBox1.ItemsSource = www.ViewRandomNumbers();
             SetDataContext();
