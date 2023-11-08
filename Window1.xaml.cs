@@ -22,7 +22,6 @@ namespace Brighteye
     /// </summary>
     public partial class Window1 : Window
     {
-        public WorkWithContext www = new WorkWithContext();
         public Window1()
         {
             InitializeComponent();
@@ -31,12 +30,8 @@ namespace Brighteye
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            www.SortRandomNumbers();
+            WorkWithContext.SortRandomNumbers();
             SetDataContext();
-        }
-        private void SetDataContext()
-        {
-            DataContext = new NumbersViewModel();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -44,6 +39,10 @@ namespace Brighteye
             Hide();
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
+        }
+        private void SetDataContext()
+        {
+            DataContext = new NumbersViewModel();
         }
     }
 }

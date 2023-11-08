@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Brighteye"
         mc:Ignorable="d"
-        Title="Application for sorting numbers" Height="600" Width="600" WindowStartupLocation="CenterScreen" MinHeight="500" MinWidth="500">
+        Title="Application for sorting numbers" Icon="logo/images.png" Height="600" Width="600" WindowStartupLocation="CenterScreen" MinHeight="500" MinWidth="500">
     <Grid Background="SlateGray" Margin="10" > 
         <DataGrid Padding="5" Margin="5" Grid.Row="0" AutoGenerateColumns="False" ItemsSource="{Binding Items}">
             <DataGrid.Columns >

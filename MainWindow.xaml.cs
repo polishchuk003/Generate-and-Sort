@@ -19,6 +19,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Brighteye
 {
@@ -27,11 +28,10 @@ namespace Brighteye
     /// </summary>
     public partial class MainWindow : Window
     {
-        public WorkWithContext www = new WorkWithContext();
         public MainWindow()
         {
             InitializeComponent();
-            
+
             Loaded += MainWindow_Loaded;
             Closed += MainWindow_Closed;
         }
@@ -48,11 +48,10 @@ namespace Brighteye
 
         private void PopulateButton_Click(object sender, RoutedEventArgs e)
         {
-            label.Visibility = Visibility.Collapsed;
-            www.GenerationRandomNumbers();
-            numberListBox1.ItemsSource = www.ViewRandomNumbers();
+            WorkWithContext.GenerationRandomNumbers();
+            numberListBox1.ItemsSource = WorkWithContext.ViewRandomNumbers();
             SetDataContext();
-            MessageBox.Show("Дані успішно згенеровані!!!");
+            MessageBox.Show("Дані успішно згенеровані!!!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void SortButton_Click(object sender, RoutedEventArgs e)
@@ -60,7 +59,7 @@ namespace Brighteye
             Window1 window = new Window1();
             window.Show();
             Hide();
-            MessageBox.Show("Дані успішно відсортовані!!!");
+            MessageBox.Show("Дані успішно відсортовані!!!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void SetDataContext()
