@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Brighteye.ennee
+namespace Brighteye.MainOperations
 {
     public class OperationsWithTables
     {

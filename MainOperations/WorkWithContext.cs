@@ -7,27 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Brighteye.ennee
+namespace Brighteye.MainOperations
 {
     internal class WorkWithContext
     {
-        private static TestDBContext context = new TestDBContext();
-        private static OperationsWithTables operationsWithTables = new OperationsWithTables();
-        private static int generationVariablesAmount = 10;
+        private static TestDBContext _context = new TestDBContext();
+        private static OperationsWithTables _operationsWithTables = new OperationsWithTables();
+        private static int _amountElements = 10;
 
         internal static void GenerationRandomNumbers()
         {
-            operationsWithTables.FillOutTable<UnsortedData>(RandomCreator.CreateRandomArray(generationVariablesAmount), context.UnsortedDatas);
-            context.SaveChanges();
+            _operationsWithTables.FillOutTable<UnsortedData>(RandomCreator.CreateRandomArray(_amountElements), _context.UnsortedDatas);
+            _context.SaveChanges();
         }
         internal static List<int> ViewRandomNumbers()
         {
-            return context.UnsortedDatas.Select(x => x.Value).ToList();
+            return _context.UnsortedDatas.Select(x => x.Value).ToList();
         }
-        internal static void SortRandomNumbers() 
+        internal static void SortRandomNumbers()
         {
-            operationsWithTables.FillOutTable<SortedData>(Sorting.GetSortedArray(operationsWithTables.GetUnsortedNumbers(context.UnsortedDatas)), context.SortedDatas);
-            context.SaveChanges();
+            _operationsWithTables.FillOutTable<SortedData>(Sorting.GetSortedArray(_operationsWithTables.GetUnsortedNumbers(_context.UnsortedDatas)), _context.SortedDatas);
+            _context.SaveChanges();
         }
 
     }

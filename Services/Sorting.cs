@@ -13,7 +13,7 @@ namespace Brighteye.Services
             return MergeSort(unsortedArray, 0, unsortedArray.Length - 1);
         }
 
-        static int[] MergeSort(int[] a, int l, int r)
+        public static int[] MergeSort(int[] a, int l, int r)
         {
             if (l < r)
             {
