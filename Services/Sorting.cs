@@ -1,67 +1,72 @@
-﻿namespace Brighteye
+﻿using System;
+
+namespace Brighteye
 {
     internal class Sorting
     {
         public static int[] GetSortedArray(int[] unsortedArray)
         {
+            if (unsortedArray == null)
+                throw new ArgumentNullException(nameof(unsortedArray), "The input array cannot be null.");
+
             return MergeSort(unsortedArray, 0, unsortedArray.Length - 1);
         }
 
-        public static int[] MergeSort(int[] a, int l, int r)
+        public static int[] MergeSort(int[] array, int left, int right)
         {
-            if (l < r)
+            if (left < right)
             {
-                var m = (l + r) / 2;
-                MergeSort(a, l, m);
-                MergeSort(a, m + 1, r);
-                Merge(a, l, m, r);
+                var middle = (left + right) / 2;
+                MergeSort(array, left, middle);
+                MergeSort(array, middle + 1, right);
+                Merge(array, left, middle, right);
             }
 
-            return a;
+            return array;
         }
-        public static void Merge(int[] a, int l, int m, int r)
+        public static void Merge(int[] a, int left, int middle, int right)
         {
-            int n1 = m - l + 1;
-            int n2 = r - m;
+            int n1 = middle - left + 1;
+            int n2 = right - middle;
 
-            var b = new int[n1]; //leftArray
-            var c = new int[n2]; //rightArray
+            var leftArray = new int[n1];
+            var rightArray = new int[n2];
 
             for (int i = 0; i < n1; i++)
             {
-                b[i] = a[l + i];
+                leftArray[i] = a[left + i];
             }
             for (int j = 0; j < n2; j++)
             {
-                c[j] = a[m + 1 + j];
+                rightArray[j] = a[middle + 1 + j];
             }
 
-            int x = 0, y = 0, k = l;
+            int x = 0, y = 0, k = left;
 
             while (x < n1 && y < n2)
             {
-                if (b[x] <= c[y])
+                if (leftArray[x] <= rightArray[y])
                 {
-                    a[k] = b[x];
+                    a[k] = leftArray[x];
                     x++;
                 }
                 else
                 {
-                    a[k] = c[y];
+                    a[k] = rightArray[y];
                     y++;
                 }
                 k++;
             }
             while (x < n1)
             {
-                a[k] = b[x];
+                a[k] = leftArray[x];
                 x++;
                 k++;
             }
 
             while (y < n2)
             {
-                a[k] = c[y];
+                a[k] = rightArray[y];
                 y++;
                 k++;
             }

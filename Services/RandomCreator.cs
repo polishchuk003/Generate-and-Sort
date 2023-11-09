@@ -5,8 +5,8 @@ namespace Brighteye
     public static class RandomCreator
     {
         private static readonly Random _random = new Random();
-        private static int _limitLower = 1;
-        private static int _limitUpper = 11;
+        private const int _limitLower = 1;
+        private const int _limitUpper = 11;
 
         public static int[] CreateRandomArray(int length)
         {

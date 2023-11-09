@@ -2,13 +2,11 @@
 
 namespace Brighteye
 {
-    public partial class MainWindow : Window
+    public partial class WindowUnsortadeNumbers : Window
     {
-        private Window1 _window = new Window1();
-        public MainWindow()
+        public WindowUnsortadeNumbers()
         {
             InitializeComponent();
-
             Loaded += MainWindow_Loaded;
             Closed += MainWindow_Closed;
         }
@@ -20,7 +18,7 @@ namespace Brighteye
 
         private void MainWindow_Closed(object sender, System.EventArgs e)
         {
-
+            Application.Current.Shutdown();
         }
 
         private void PopulateButton_Click(object sender, RoutedEventArgs e)
@@ -28,17 +26,16 @@ namespace Brighteye
             WorkWithContext.GenerationRandomNumbers();
             numberListBox1.ItemsSource = WorkWithContext.ViewRandomNumbers();
             SetDataContext();
-            MessageBox.Show("Data has been successfully generated!!!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void SortButton_Click(object sender, RoutedEventArgs e)
         {
-            _window.Show();
+            WindowSortadeNumbers window = new WindowSortadeNumbers();
+            window.Show();
             Hide();
             MessageBox.Show("Data has been successfully sorted!!!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
 
         }
-
         private void SetDataContext()
         {
             DataContext = new NumbersViewModel();

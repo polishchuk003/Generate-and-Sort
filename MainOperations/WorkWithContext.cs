@@ -5,24 +5,23 @@ namespace Brighteye
 {
     internal class WorkWithContext
     {
-        private static TestDBContext _context = new TestDBContext();
-        private static OperationsWithTables _operationsWithTables = new OperationsWithTables();
-        private static int _amountElements = 10;
+        private static readonly TestDBContext context = new TestDBContext();
+        private static readonly OperationsWithTables operationsWithTables = new OperationsWithTables();
+        private const int _amountElements = 10;
 
         internal static void GenerationRandomNumbers()
         {
-            _operationsWithTables.FillOutTable<UnsortedData>(RandomCreator.CreateRandomArray(_amountElements), _context.UnsortedDatas);
-            _context.SaveChanges();
+            operationsWithTables.FillOutTable<UnsortedData>(RandomCreator.CreateRandomArray(_amountElements), context.UnsortedDatas);
+            context.SaveChanges();
         }
         internal static List<int> ViewRandomNumbers()
         {
-            return _context.UnsortedDatas.Select(x => x.Value).ToList();
+            return context.UnsortedDatas.Select(x => x.Value).ToList();
         }
         internal static void SortRandomNumbers()
         {
-            _operationsWithTables.FillOutTable<SortedData>(Sorting.GetSortedArray(_operationsWithTables.GetUnsortedNumbers(_context.UnsortedDatas)), _context.SortedDatas);
-            _context.SaveChanges();
+            operationsWithTables.FillOutTable<SortedData>(Sorting.GetSortedArray(operationsWithTables.GetUnsortedNumbers(context.UnsortedDatas)), context.SortedDatas);
+            context.SaveChanges();
         }
-
     }
 }

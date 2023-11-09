@@ -4,12 +4,13 @@ namespace Brighteye
 {
     public class TestDBContext : DbContext
     {
-        public TestDBContext()
-            : base("name=TestDBContext")
+        private const string ConnectionStringName = "TestDBContext";
+        public TestDBContext() : base(ConnectionStringName)
         {
         }
-        public DbSet<UnsortedData> UnsortedDatas { get; set; }
+
         public DbSet<SortedData> SortedDatas { get; set; }
+        public DbSet<UnsortedData> UnsortedDatas { get; set; }
 
     }
 
