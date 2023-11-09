@@ -9,7 +9,17 @@ namespace Brighteye
 
         public void FillOutTable<T>(int[] array, DbSet<T> table) where T : Number
         {
+            if (array == null)
+                throw new ArgumentNullException(nameof(array), "The input array cannot be null.");
+
+            if (table == null)
+                throw new ArgumentNullException(nameof(table), "The input table cannot be null.");
+
+            if (array.Length != table.Count())
+                throw new ArgumentException("The length of the array must match the number of elements in the table.", nameof(array));
+
             ClearTable<T>(table);
+            
             foreach (var item in array)
             {
                 var number = Activator.CreateInstance<T>();
@@ -19,7 +29,10 @@ namespace Brighteye
         }
         public int[] GetUnsortedNumbers(DbSet<UnsortedData> unsortedNumbers)
         {
-            int[] unsortedArray = new int[unsortedNumbers.ToList().Count()];
+            if (unsortedNumbers == null)
+                throw new ArgumentNullException(nameof(unsortedNumbers), "The input DbSet<UnsortedData> cannot be null.");
+
+            int[] unsortedArray = new int[unsortedNumbers.Count()];
 
             unsortedArray = unsortedNumbers.Select(x => x.Value).ToArray();
             return unsortedArray;
