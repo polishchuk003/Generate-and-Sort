@@ -24,7 +24,7 @@ namespace Brighteye
 
             return array;
         }
-        public static void Merge(int[] a, int left, int middle, int right)
+        public static void Merge(int[] array, int left, int middle, int right)
         {
             int n1 = middle - left + 1;
             int n2 = right - middle;
@@ -33,13 +33,9 @@ namespace Brighteye
             var rightArray = new int[n2];
 
             for (int i = 0; i < n1; i++)
-            {
-                leftArray[i] = a[left + i];
-            }
+                leftArray[i] = array[left + i];
             for (int j = 0; j < n2; j++)
-            {
-                rightArray[j] = a[middle + 1 + j];
-            }
+                rightArray[j] = array[middle + 1 + j];
 
             int x = 0, y = 0, k = left;
 
@@ -47,26 +43,25 @@ namespace Brighteye
             {
                 if (leftArray[x] <= rightArray[y])
                 {
-                    a[k] = leftArray[x];
+                    array[k] = leftArray[x];
                     x++;
                 }
                 else
                 {
-                    a[k] = rightArray[y];
+                    array[k] = rightArray[y];
                     y++;
                 }
                 k++;
             }
             while (x < n1)
             {
-                a[k] = leftArray[x];
+                array[k] = leftArray[x];
                 x++;
                 k++;
             }
-
             while (y < n2)
             {
-                a[k] = rightArray[y];
+                array[k] = rightArray[y];
                 y++;
                 k++;
             }
