@@ -40,6 +40,7 @@ namespace Brighteye
         private void ClearTable<T>(DbSet<T> table) where T : Number
         {
             var itemsToRemove = table.ToList();
+
             foreach (var item in itemsToRemove)
             {
                 table.Remove(item);

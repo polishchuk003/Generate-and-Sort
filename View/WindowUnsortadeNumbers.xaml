@@ -5,12 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Brighteye"
         mc:Ignorable="d"
-        Title="Application for sorting numbers" Icon="logo/images.png" Height="600" Width="600" MinHeight="500" MinWidth="500" WindowStartupLocation="CenterScreen">
+     Icon="logo/images.png"
+     Title="Application for sorting numbers" Height="600" Width="600" MinHeight="500" MinWidth="500" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="PrimaryButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="#007ACC"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="BorderBrush" Value="#007ACC"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="40"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Padding" Value="10"/>
             <Setter Property="Margin" Value="10"/>
@@ -29,22 +32,18 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    <Grid Background="#EFEFEF" Margin="5">
+
+    <Grid Background="#F1F1F1" Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
             <RowDefinition Height="*" />
             <RowDefinition Height="60" />
-            <RowDefinition Height="40" />
         </Grid.RowDefinitions>
-        <Label Content="Table of random numbers" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="24" FontFamily="Segoe UI" FontWeight="Bold"/>
-
+        <Label Content="Table of random numbers" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="24" FontFamily="Segoe UI" FontWeight="Bold" Foreground="#333333"/>
+        <ListBox Name="numberListBox1" Grid.Row="1" FontSize="16" Margin="10" Padding="10" Height="auto" Width="auto" BorderBrush="DarkGray" BorderThickness="1"/>
         <DockPanel Grid.Row="2">
             <Button Style="{StaticResource PrimaryButtonStyle}" Content="Generate" Click="PopulateButton_Click"/>
             <Button Style="{StaticResource PrimaryButtonStyle}" Content="Sort" Click="SortButton_Click"/>
         </DockPanel>
-
-        <ListBox Name="numberListBox1" Grid.Row="1" FontSize="16" Margin="10" Padding="10" Height="auto" Width="auto" BorderBrush="DarkGray" BorderThickness="1" >
-        </ListBox>
-        <TextBlock Name="label" Text="Design by Polishchuk S" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" FontSize="10"/>
     </Grid>
 </Window>
