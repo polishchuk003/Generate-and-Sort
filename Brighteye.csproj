@@ -67,7 +67,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DataModel\UnsortedDataViewModel.cs" />
     <Compile Include="DataModel\SortedDataViewModel.cs" />
     <Compile Include="DataModel\DataDbContext.cs" />
     <Compile Include="MainOperations\TableOperationsManager.cs" />
