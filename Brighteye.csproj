@@ -67,29 +67,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DataModel\NumbersViewModel.cs" />
-    <Compile Include="DataModel\TestDBContext.cs" />
-    <Compile Include="MainOperations\OperationsWithTables.cs" />
-    <Compile Include="MainOperations\WorkWithContext.cs" />
-    <Compile Include="Migrations\202311061433443_InitialCreate.cs" />
-    <Compile Include="Migrations\202311061433443_InitialCreate.designer.cs">
-      <DependentUpon>202311061433443_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311070809107_PPP.cs" />
-    <Compile Include="Migrations\202311070809107_PPP.designer.cs">
-      <DependentUpon>202311070809107_PPP.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311081802336_InitialCreate1.cs" />
-    <Compile Include="Migrations\202311081802336_InitialCreate1.designer.cs">
-      <DependentUpon>202311081802336_InitialCreate1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="DataModel\UnsortedDataViewModel.cs" />
+    <Compile Include="DataModel\SortedDataViewModel.cs" />
+    <Compile Include="DataModel\DataDbContext.cs" />
+    <Compile Include="MainOperations\TableOperationsManager.cs" />
+    <Compile Include="MainOperations\TableService.cs" />
     <Compile Include="Services\RandomCreator.cs" />
     <Compile Include="Services\Sorting.cs" />
-    <Compile Include="View\WindowSortadeNumbers.xaml.cs">
-      <DependentUpon>WindowSortadeNumbers.xaml</DependentUpon>
+    <Compile Include="Views\WindowSortedNumbers.xaml.cs">
+      <DependentUpon>WindowSortedNumbers.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\WindowUnsortadeNumbers.xaml">
+    <Page Include="Views\WindowUnsortedNumbers.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -98,13 +86,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Data\Number.cs" />
-    <Compile Include="Data\SortedData.cs" />
-    <Compile Include="Data\UnsortedData.cs" />
-    <Compile Include="View\WindowUnsortadeNumbers.xaml.cs">
-      <DependentUpon>WindowUnsortadeNumbers.xaml</DependentUpon>
+    <Compile Include="Data\SortedNumber.cs" />
+    <Compile Include="Data\UnsortedNumber.cs" />
+    <Compile Include="Views\WindowUnsortedNumbers.xaml.cs">
+      <DependentUpon>WindowUnsortedNumbers.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\WindowSortadeNumbers.xaml">
+    <Page Include="Views\WindowSortedNumbers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -123,15 +111,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202311061433443_InitialCreate.resx">
-      <DependentUpon>202311061433443_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311070809107_PPP.resx">
-      <DependentUpon>202311070809107_PPP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311081802336_InitialCreate1.resx">
-      <DependentUpon>202311081802336_InitialCreate1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -146,7 +125,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\logo\images.png" />
+    <Resource Include="Views\logo\images.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
