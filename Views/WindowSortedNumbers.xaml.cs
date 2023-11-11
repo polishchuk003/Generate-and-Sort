@@ -20,7 +20,7 @@ namespace Brighteye
 
         private void Window1_Loaded(object sender, RoutedEventArgs e)
         {
-            WorkWithContext.SortRandomNumbers();
+            TableService.SortRandomNumbers();
             SetDataContext();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -32,7 +32,7 @@ namespace Brighteye
 
         private void SetDataContext()
         {
-            DataContext = new NumbersViewModel();
+            DataContext = new SortedDataViewModel();
         }
     }
 }

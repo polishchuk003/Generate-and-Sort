@@ -7,7 +7,7 @@
         mc:Ignorable="d"
     Icon="logo/images.png"
     Title="Application for sorting numbers" Height="600" Width="600" WindowStartupLocation="CenterScreen" MinHeight="500" MinWidth="500">
-    <Grid Background="#F1F1F1" Margin="5" >
+    <Grid Background="LightGray" Margin="5" >
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition Height="100*"/>

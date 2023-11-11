@@ -13,7 +13,6 @@ namespace Brighteye
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void MainWindow_Closed(object sender, System.EventArgs e)
@@ -23,9 +22,8 @@ namespace Brighteye
 
         private void PopulateButton_Click(object sender, RoutedEventArgs e)
         {
-            WorkWithContext.GenerationRandomNumbers();
-            numberListBox1.ItemsSource = WorkWithContext.ViewRandomNumbers();
-            SetDataContext();
+            TableService.GenerationRandomNumbers();
+            numberListBox1.ItemsSource = TableService.ViewRandomNumbers();
         }
 
         private void SortButton_Click(object sender, RoutedEventArgs e)
@@ -35,10 +33,6 @@ namespace Brighteye
             Hide();
             MessageBox.Show("Data has been successfully sorted!!!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
 
-        }
-        private void SetDataContext()
-        {
-            DataContext = new NumbersViewModel();
         }
 
     }

@@ -11,6 +11,7 @@ namespace Brighteye
         public static int[] CreateRandomArray(int length)
         {
             var array = new int[length];
+
             for (int i = 0; i < length; i++)
             {
                 array[i] = _random.Next(_limitLower, _limitUpper);

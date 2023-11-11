@@ -33,7 +33,7 @@
         </Style>
     </Window.Resources>
 
-    <Grid Background="#F1F1F1" Margin="5">
+    <Grid Background="LightGray" Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
             <RowDefinition Height="*" />

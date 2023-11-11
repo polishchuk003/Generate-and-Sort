@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Brighteye
 {
-    public class OperationsWithTables
+    public class TableOperationsManager
     {
 
         public void FillOutTable<T>(int[] array, DbSet<T> table) where T : Number
@@ -15,11 +15,8 @@ namespace Brighteye
             if (table == null)
                 throw new ArgumentNullException(nameof(table), "The input table cannot be null.");
 
-            if (array.Length != table.Count())
-                throw new ArgumentException("The length of the array must match the number of elements in the table.", nameof(array));
-
             ClearTable<T>(table);
-            
+
             foreach (var item in array)
             {
                 var number = Activator.CreateInstance<T>();
@@ -27,7 +24,7 @@ namespace Brighteye
                 table.Add(number);
             }
         }
-        public int[] GetUnsortedNumbers(DbSet<UnsortedData> unsortedNumbers)
+        public int[] GetUnsortedNumbers(DbSet<UnsortedNumber> unsortedNumbers)
         {
             if (unsortedNumbers == null)
                 throw new ArgumentNullException(nameof(unsortedNumbers), "The input DbSet<UnsortedData> cannot be null.");

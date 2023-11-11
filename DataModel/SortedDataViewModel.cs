@@ -5,9 +5,9 @@ using System.Windows.Data;
 
 namespace Brighteye
 {
-    internal class NumbersViewModel : DependencyObject
+    internal class SortedDataViewModel : DependencyObject
     {
-        private static readonly TestDBContext _context = new TestDBContext();
+        private static readonly DataDbContext _context = new DataDbContext();
         public ICollectionView Items
         {
             get { return (ICollectionView)GetValue(ItemsProperty); }
@@ -15,11 +15,11 @@ namespace Brighteye
         }
 
         public static readonly DependencyProperty ItemsProperty =
-            DependencyProperty.Register("Items", typeof(ICollectionView), typeof(NumbersViewModel), new PropertyMetadata(null));
+            DependencyProperty.Register("Items", typeof(ICollectionView), typeof(SortedDataViewModel), new PropertyMetadata(null));
 
-        public NumbersViewModel()
+        public SortedDataViewModel()
         {
-            Items = CollectionViewSource.GetDefaultView(_context.SortedDatas.ToList());
+            Items = CollectionViewSource.GetDefaultView(_context.SortedNumbers.ToList());
         }
 
     }

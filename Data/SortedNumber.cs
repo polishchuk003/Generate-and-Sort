@@ -1,6 +1,6 @@
 ﻿namespace Brighteye
 {
-    public class UnsortedData : Number
+    public class SortedNumber : Number
     {
     }
 }
