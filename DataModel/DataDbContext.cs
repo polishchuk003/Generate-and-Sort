@@ -5,7 +5,6 @@ namespace Brighteye
 {
     public class DataDbContext : DbContext
     {
-        // private const string connectionStringName = "DataDbContext";
         public DataDbContext() : base("name = DataDbContext")
         {
         }
