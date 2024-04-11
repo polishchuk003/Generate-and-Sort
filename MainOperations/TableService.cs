@@ -32,7 +32,6 @@ namespace Brighteye
         }
 
 
-
         public void FillOutTable<T>(int[] array, DbSet<T> table) where T : Number
         {
             if (array == null)
