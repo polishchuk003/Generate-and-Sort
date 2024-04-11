@@ -6,6 +6,7 @@ namespace Brighteye
 
     public partial class WindowSortadeNumbers : Window
     {
+        
         public WindowSortadeNumbers()
         {
             InitializeComponent();
@@ -20,7 +21,8 @@ namespace Brighteye
 
         private void Window1_Loaded(object sender, RoutedEventArgs e)
         {
-            TableService.SortRandomNumbers();
+            TableService tableService = new TableService();
+            tableService.SortRandomNumbers();
             SetDataContext();
         }
         private void Button_Click(object sender, RoutedEventArgs e)

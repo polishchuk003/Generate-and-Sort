@@ -7,12 +7,8 @@ namespace Brighteye
         public WindowUnsortadeNumbers()
         {
             InitializeComponent();
-            Loaded += MainWindow_Loaded;
+            // Loaded += MainWindow_Loaded;
             Closed += MainWindow_Closed;
-        }
-
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
-        {
         }
 
         private void MainWindow_Closed(object sender, System.EventArgs e)
@@ -22,8 +18,9 @@ namespace Brighteye
 
         private void PopulateButton_Click(object sender, RoutedEventArgs e)
         {
-            TableService.GenerationRandomNumbers();
-            numberListBox1.ItemsSource = TableService.ViewRandomNumbers();
+            TableService tableService = new TableService();
+            tableService.GenerationRandomNumbers();
+            numberListBox1.ItemsSource = tableService.ViewRandomNumbers();
         }
 
         private void SortButton_Click(object sender, RoutedEventArgs e)
