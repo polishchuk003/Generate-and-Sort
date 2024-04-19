@@ -6,22 +6,57 @@
         xmlns:local="clr-namespace:Brighteye"
         mc:Ignorable="d"
     Icon="logo/images.png"
-    Title="Application for sorting numbers" Height="600" Width="600" WindowStartupLocation="CenterScreen" MinHeight="500" MinWidth="500">
-    <Grid Background="LightGray" Margin="5" >
+    Title="Application for sorting numbers" 
+        Height="600" 
+        Width="600" 
+        WindowStartupLocation="CenterScreen" 
+        MinHeight="500" 
+        MinWidth="500">
+    <Grid Background="LightGray" 
+          Margin="5" >
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition Height="100*"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <Label Content="Table of sorted numbers" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" FontSize="24" FontFamily="Segoe UI" FontWeight="Bold" Foreground="#333333"/>
-        <DataGrid Padding="5" Margin="5" Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding Items}">
+        <Label Content="Table of sorted numbers" 
+               Grid.Row="0" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Bottom" 
+               Margin="5" 
+               FontSize="24" 
+               FontFamily="Segoe UI" 
+               FontWeight="Bold" 
+               Foreground="#333333"/>
+        <DataGrid Padding="5" 
+                  Margin="5" 
+                  Grid.Row="1" 
+                  AutoGenerateColumns="False" 
+                  ItemsSource="{Binding Items}">
             <DataGrid.Columns >
-                <DataGridTextColumn Header="SortedNumber" FontSize="16" Binding="{Binding Value}" Width="*"/>
+                <DataGridTextColumn Header="SortedNumber" 
+                                    FontSize="16" 
+                                    Binding="{Binding Value}" 
+                                    Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Background="#4CAF50" Grid.Row="2" Content="OK" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="40" Margin="20" FontSize="16" FontWeight="Bold" Foreground="White" Click="Button_Click">
+        <Button Background="#4CAF50" 
+                Grid.Row="2" 
+                Content="OK" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Width="100" 
+                Height="40" 
+                Margin="20" 
+                FontSize="16" 
+                FontWeight="Bold" 
+                Foreground="White"
+                Click="Button_Click">
             <Button.Effect>
-                <DropShadowEffect Color="Gray" Direction="330" ShadowDepth="5" Opacity="0.7"/>
+                <DropShadowEffect Color="Gray" 
+                                  Direction="330" 
+                                  ShadowDepth="5" 
+                                  Opacity="0.7"/>
             </Button.Effect>
         </Button>
     </Grid>
