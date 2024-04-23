@@ -11,19 +11,41 @@ namespace Brighteye.DataModel
 {
     internal class UnsortedDataViewModel : DependencyObject
     {
-        private static readonly DataDbContext _context = new DataDbContext();
-        public ICollectionView Items
+
+
+
+        public ICollectionView UnsorteedItems
         {
-            get { return (ICollectionView)GetValue(ItemsProperty); }
-            set { SetValue(ItemsProperty, value); }
+            get { return (ICollectionView)GetValue(UnsorteedItemsProperty); }
+            set { SetValue(UnsorteedItemsProperty, value); }
         }
 
-        public static readonly DependencyProperty ItemsProperty =
-            DependencyProperty.Register("Items", typeof(ICollectionView), typeof(UnsortedDataViewModel), new PropertyMetadata(null));
+        // Using a DependencyProperty as the backing store for UnsorteedItems.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty UnsorteedItemsProperty =
+            DependencyProperty.Register("UnsorteedItems", typeof(ICollectionView), typeof(UnsortedDataViewModel), new PropertyMetadata(null));
+
+
+
+
+
+
+
+
+
+
+        private static readonly DataDbContext _context = new DataDbContext();
+        //public ICollectionView Items
+        //{
+        //    get { return (ICollectionView)GetValue(ItemsProperty); }
+        //    set { SetValue(ItemsProperty, value); }
+        //}
+
+        //public static readonly DependencyProperty ItemsProperty =
+        //    DependencyProperty.Register("Items", typeof(ICollectionView), typeof(UnsortedDataViewModel), new PropertyMetadata(null));
 
         public UnsortedDataViewModel()
         {
-            Items = CollectionViewSource.GetDefaultView(_context.UnsortedNumbers.ToList());
+            UnsorteedItems = CollectionViewSource.GetDefaultView(_context.UnsortedNumbers.ToList());
         }
     }
 }

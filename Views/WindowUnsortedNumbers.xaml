@@ -45,24 +45,24 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Table of random numbers" 
+        <Label Content="Tables with unsorted numbers" 
                Grid.Row="0" 
                Grid.ColumnSpan="2" 
                HorizontalAlignment="Center" 
                VerticalAlignment="Top" 
-               Margin="0,13,0,0" 
+               Margin="10" 
                FontSize="24"
                FontFamily="Segoe UI" 
                FontWeight="Bold" 
                Foreground="#333333" 
-               Width="295"/>
-        <ListBox Name="numberListBox1" 
+               Width="auto"/>
+        <ListBox Name="numberListBox1"  
                  Grid.Row="1" 
                  Grid.Column="0" 
                  FontSize="16" 
                  Margin="10" 
                  Padding="10" 
-                 Height="auto" 
+                 Height="400" 
                  Width="auto" 
                  BorderBrush="DarkGray" 
                  BorderThickness="1"/>
@@ -70,10 +70,12 @@
                   Grid.Column="1"
                   Margin="10"
                   Padding="10"
-                  VerticalAlignment="Top"
+                  VerticalAlignment="Center"
                   HorizontalAlignment="Center"
-                  ItemsSource="{Binding Items}"
-                  Height="183">
+                  ItemsSource="{Binding UnsorteedItems}"
+                  AutoGenerateColumns="false"
+                  IsReadOnly="True"
+                  Height="400">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="UnsortedNumber" 
                                     FontSize="16" 
@@ -81,7 +83,10 @@
                                     Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DockPanel Grid.Row="2">
+        <DockPanel Grid.Row="2"
+                   Grid.ColumnSpan="2"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center">
             <Button Style="{StaticResource PrimaryButtonStyle}" 
                     Content="Generate" 
                     Click="PopulateButton_Click"/>

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Brighteye.DataModel;
+using System.Windows;
 
 namespace Brighteye
 {
@@ -21,6 +22,7 @@ namespace Brighteye
             TableService tableService = new TableService();
             tableService.GenerationRandomNumbers();
             numberListBox1.ItemsSource = tableService.ViewRandomNumbers();
+            SetDataContextUnsorted();
         }
 
         private void SortButton_Click(object sender, RoutedEventArgs e)
@@ -30,6 +32,10 @@ namespace Brighteye
             Hide();
             MessageBox.Show("Data has been successfully sorted!!!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
 
+        }
+        private void SetDataContextUnsorted()
+        {
+            DataContext = new UnsortedDataViewModel();
         }
 
     }
