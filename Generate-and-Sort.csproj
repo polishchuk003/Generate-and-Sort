@@ -70,7 +70,6 @@
     <Compile Include="DataModel\SortedDataViewModel.cs" />
     <Compile Include="DataModel\DataDbContext.cs" />
     <Compile Include="DataModel\UnsortedDataViewModel.cs" />
-    <Compile Include="MainOperations\TableOperationsManager.cs" />
     <Compile Include="MainOperations\TableService.cs" />
     <Compile Include="Migrations\202311121055182_InitialCreate.cs" />
     <Compile Include="Migrations\202311121055182_InitialCreate.designer.cs">

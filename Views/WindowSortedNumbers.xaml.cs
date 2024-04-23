@@ -23,18 +23,13 @@ namespace Brighteye
         {
             TableService tableService = new TableService();
             tableService.SortRandomNumbers();
-            SetDataContext();
+            DataContext = new SortedDataViewModel();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             WindowUnsortadeNumbers window = new WindowUnsortadeNumbers();
             window.Show();
             Hide();
-        }
-
-        private void SetDataContext()
-        {
-            DataContext = new SortedDataViewModel();
         }
     }
 }

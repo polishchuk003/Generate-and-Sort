@@ -22,7 +22,7 @@ namespace Brighteye
             TableService tableService = new TableService();
             tableService.GenerationRandomNumbers();
             numberListBox1.ItemsSource = tableService.ViewRandomNumbers();
-            SetDataContextUnsorted();
+            DataContext = new UnsortedDataViewModel();
         }
 
         private void SortButton_Click(object sender, RoutedEventArgs e)
@@ -33,10 +33,5 @@ namespace Brighteye
             MessageBox.Show("Data has been successfully sorted!!!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
 
         }
-        private void SetDataContextUnsorted()
-        {
-            DataContext = new UnsortedDataViewModel();
-        }
-
     }
 }

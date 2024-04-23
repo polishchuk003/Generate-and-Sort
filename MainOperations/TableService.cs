@@ -8,13 +8,10 @@ namespace Brighteye
      class TableService
     {
         private static readonly DataDbContext context = new DataDbContext();
-        // private static readonly TableOperationsManager operationsWithTables = new TableOperationsManager();
         private const int amountElements = 10;
 
         public void GenerationRandomNumbers()
         {
-            //operationsWithTables.FillOutTable<UnsortedNumber>(RandomCreator.CreateRandomArray(amountElements), context.UnsortedNumbers);
-
             FillOutTable<UnsortedNumber>(RandomCreator.CreateRandomArray(amountElements), context.UnsortedNumbers);
 
             context.SaveChanges();
@@ -25,8 +22,6 @@ namespace Brighteye
         }
         public void SortRandomNumbers()
         {
-            //   operationsWithTables.FillOutTable<SortedNumber>(Sorting.GetSortedArray(operationsWithTables.GetUnsortedNumbers(context.UnsortedNumbers)), context.SortedNumbers);
-
             FillOutTable<SortedNumber>(Sorting.GetSortedArray(GetUnsortedNumbers(context.UnsortedNumbers)), context.SortedNumbers);
             context.SaveChanges();
         }
